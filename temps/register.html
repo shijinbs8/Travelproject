@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Registration</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{%static 'fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="inner">
+				<form action="register" method="post" >
+			    {% csrf_token %}
+
+					<h3>Login Page</h3>
+
+
+					<div class="form-wrapper">
+						<label  class="label-input">User Name</label>
+						<input type="text" class="form-control" name="User_name">
+					</div>
+					<div class="form-wrapper">
+						<label  class="label-input">First Name</label>
+						<input type="text" class="form-control" name="first_name">
+					</div>
+					<div class="form-wrapper">
+						<label  class="label-input">Last Name</label>
+						<input type="text" class="form-control" name="last_name">
+					</div>
+					<div class="form-wrapper">
+						<label  class="label-input">Email</label>
+						<input type="email" class="form-control" name="email">
+					</div>
+					<div class="form-wrapper">
+						<label  class="label-input">Password</label>
+						<input type="password" class="form-control" name="password">
+					</div>
+					<div class="form-wrapper">
+						<label  class="label-input">Confirm Password</label>
+						<input type="password" class="form-control" name="cpassword">
+					</div>
+
+					<input type="submit">
+					<div class="form-wrapper">
+					    {% for msg in messages %}
+				        <label class="label-input">{{msg}}</label>
+						{% endfor %}
+					</div>
+				</form>
+
+				<div class="image-holder">
+					<img src="{% static 'images/inmakes.jpeg' %}" alt="" width="700">
+				</div>
+			</div>
+		</div>
+
+		<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
